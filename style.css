@@ -1,0 +1,147 @@
+.cell{
+    width: 75px;
+    height: 75px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 50px;
+    cursor: pointer;
+}
+#cellConatiner{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 225px;
+    margin:auto;
+}
+#gameConatiner{
+    font-family: "permanent Marker",cursive;
+    text-align: center;
+
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.game-over {
+    animation: gameOver 0.5s;
+}
+
+@keyframes gameOver {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.gameConatiner {
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 30px;
+}
+
+#cellConatiner {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 300px;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Different colors for X and O */
+.cell:has(text="X") {
+    color: #2196F3;  /* Blue for X */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cell:has(text="O") {
+    color: #E91E63;  /* Pink for O */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.cell:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Status text styling */
+#statusText {
+    font-size: 24px;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Restart button styling */
+#restartBtn {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restartBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Animation keyframes */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes gameOver {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Additional cell states */
+.cell.winner {
+    background-color: #4CAF50;
+    color: white !important;
+}
+
+.cell.draw {
+    background-color: #f44336;
+    color: white !important;
+    opacity: 0.6;
+}
